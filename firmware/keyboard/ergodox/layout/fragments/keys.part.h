@@ -18,8 +18,8 @@
  * Needed by ".../lib/layout/keys.h"
  */
 #define  KEYS__DEFAULT(name, value)             \
-    void P(name) (void) { KF(press)(value); }   \
-    void R(name) (void) { KF(release)(value); }
+  void P(name) (void) { KF(press)(value); }   \
+  void R(name) (void) { KF(release)(value); }
 
 /**                                            macros/KEYS__SHIFTED/description
  * Define the functions for a "shifted" key (i.e. a key that sends a "shift"
@@ -28,10 +28,10 @@
  * Needed by ".../lib/layout/keys.h"
  */
 #define  KEYS__SHIFTED(name, value)                             \
-    void P(name) (void) { KF(press)(KEYBOARD__LeftShift);       \
-                          KF(press)(value); }                   \
-    void R(name) (void) { KF(release)(value);                   \
-                          KF(release)(KEYBOARD__LeftShift); }
+  void P(name) (void) { KF(press)(KEYBOARD__LeftShift);       \
+    KF(press)(value); }                   \
+void R(name) (void) { KF(release)(value);                   \
+  KF(release)(KEYBOARD__LeftShift); }
 
 /**                                    macros/KEYS__LAYER__PUSH_POP/description
  * Define the functions for a layer push-pop key (i.e. a layer shift key).
@@ -81,15 +81,15 @@
 void KF(2_keys_capslock)(bool pressed, uint8_t keycode) {
     static uint8_t counter = 0;
     if (pressed) {
-        counter++;
-        KF(press)(keycode);
+      counter++;
+      KF(press)(keycode);
     }
     if (counter == 2 && pressed) {
-        KF(toggle_capslock)();
+      KF(toggle_capslock)();
     }
     if (!pressed) {
-        counter--;
-        KF(release)(keycode);
+      counter--;
+      KF(release)(keycode);
     }
 }
 
@@ -228,9 +228,11 @@ KEYS__LAYER__PUSH_POP(3, 3);
 #define  keys__release__lpo3l3  KF(nop)
 
 KEYS__LAYER__PUSH_POP(4, 4);
-#define  keys__press__lpu4l4    P(lpupo4l4)
+//#define  keys__press__lpu4l4    P(lpupo4l4)
+void P(lpu4l4) (void) { layer_stack__push(0, 4, 4); kb__led__on(3); }
 #define  keys__release__lpu4l4  KF(nop)
-#define  keys__press__lpo4l4    R(lpupo4l4)
+void P(lpo4l4) (void) { layer_stack__pop_id(4); kb__led__off(3); }
+//#define  keys__press__lpo4l4    R(lpupo4l4)
 #define  keys__release__lpo4l4  KF(nop)
 
 KEYS__LAYER__PUSH_POP(5, 5);
