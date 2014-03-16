@@ -50,27 +50,26 @@ static layout_t layout PROGMEM = {
 // macro, unused,
        K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
-   equal,        1,        2,        3,        4,        5,      esc,
-   tab,          q,        w,        e,        r,        t,   lpu2l2,
-   ctrlL,        a,        s,        d,        f,        g,
-   shL2kcap,     z,        x,        c,        v,        b, lpupo2l2,
-    guiL,    grave,  bkslash,   arrowL,   arrowR,
+   grave,        1,        2,        3,        4,        5,      esc,
+     tab,        q,        w,        e,        r,        t,   brktL,
+    caps,        a,        s,        d,        f,        g,
+shL2kcap,        z,        x,        c,        v,        b, lpupo2l2,
+    guiL,    grave,  bkslash,    equal,   arrowR,
                                                                ctrlL,     altL,
                                                        nop,      nop,     home,
                                                         bs,      del,      end,
 // right hand ..... ......... ......... ......... ......... ......... .........
             lpu1l1,        6,        7,        8,        9,        0,     dash,
-             brktL,        y,        u,        i,        o,        p,    brktR,
+            lpu2l2,        y,        u,        i,        o,        p,    brktR,
                            h,        j,        k,        l,  semicol,    quote,
-          lpupo2l2,        n,        m,    comma,   period,    slash, shR2kcap,
+          lpu4l4,        n,        m,    comma,   period,    slash, shR2kcap,
                                 arrowL,   arrowD,   arrowU,   arrowR,     guiR,
     altR,    ctrlR,
    pageU,      nop,      nop,
    pageD,    enter,    space  ),
-
 // ............................................................................
 
-    MATRIX_LAYER(  // layer 1 : number pad
+    MATRIX_LAYER(  // layer 1 : windows mode
 // macro, unused,
        K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
@@ -78,19 +77,20 @@ static layout_t layout PROGMEM = {
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
-  transp,      ins,   transp,   transp,   transp,
-                                                              transp,   transp,
+  ctrlL,   transp,   transp,   transp,   transp,
+                                                              guiL,   transp,
                                                     transp,   transp,   transp,
                                                     transp,   transp,   transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
-            lpo1l1,   transp,   lpo1l1,    equal,    slash, asterisk,   transp,
-            transp,   transp,        7,        8,        9,     dash,   transp,
-                      transp,        4,        5,        6,     plus,   transp,
-            transp,   transp,        1,        2,        3,    enter,   transp,
-                                transp,   transp,   period,    enter,   transp,
-  transp,   transp,
+            lpo1l1,   transp,   transp,   transp,   transp,   transp,   transp,
+            transp,   transp,   transp,   transp,   transp,   transp,   transp,
+                      transp,   transp,   transp,   transp,   transp,   transp,
+            transp,   transp,   transp,   transp,   transp,   transp,   transp,
+                                transp,   transp,   transp,   transp,   ctrlR,
+  transp,   guiR,
   transp,   transp,   transp,
-  transp,   transp,        0  ),
+  transp,   transp,   transp ),
+
 
 // ............................................................................
 
@@ -101,7 +101,7 @@ static layout_t layout PROGMEM = {
   transp,       F1,       F2,       F3,       F4,       F5,      F11,
   transp,   braceL,   braceR,    brktL,    brktR,      nop,   lpo2l2,
   transp,  semicol,    slash,     dash,        0,    colon,
-  transp,        6,        7,        8,        9,     plus, lpupo3l3,
+  transp,        6,        7,        8,        9,     plus,   lpu3l3,
   transp,   transp,   transp,   transp,   transp,
                                                               transp,   transp,
                                                     transp,   transp,   transp,
@@ -109,7 +109,7 @@ static layout_t layout PROGMEM = {
 // right hand ..... ......... ......... ......... ......... ......... .........
                F12,       F6,       F7,       F8,       F9,      F10,    power,
             lpo2l2,      nop,  undersc, lessThan, grtrThan,   dollar,  volumeU,
-                     bkslash,        1,   parenL,   parenR,    equal,  volumeD,
+                      arrowL,   arrowD,   arrowU,  arrowR,    equal,  volumeD,
           lpupo3l3, asterisk,        2,        3,        4,        5,     mute,
                                 transp,   transp,   transp,   transp,   transp,
   transp,   transp,
@@ -142,28 +142,29 @@ static layout_t layout PROGMEM = {
 
 // ............................................................................
 
-    MATRIX_LAYER(  // layer 4 : Windows mode
+    MATRIX_LAYER(  // layer 4 : "gaming" mode
 // macro, unused,
        K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,
-  transp,   transp,   transp,   transp,   transp,   transp,   guiL,
-  ctrlL,   transp,   transp,   transp,   transp,
+  transp,   transp,   transp,   transp,   transp,   transp,   transp,
+  transp,   transp,   transp,   transp,   transp,
                                                               transp,   transp,
                                                     transp,   transp,   transp,
-                                                    transp,   transp,   transp,
+                                                    space,    transp,   transp,
 // right hand ..... ......... ......... ......... ......... ......... .........
-            lpo1l1,   transp,   transp,   transp,  transp,  transp,  transp,
-            transp,   transp,   transp,   transp,  transp,  transp,  transp,
-                      transp,   tranps,   transp,  transp,  transp,  transp,
-            transp,   transp,   trans1,   transp,  transp,  transp,  transp,
-                                transp,   transp,  transp,  transp,  transp,
+            transp,   transp,   transp,   transp,   transp,   transp,   transp,
+            transp,   transp,   transp,   transp,   transp,   transp,   transp,
+                      transp,   transp,   transp,   transp,   transp,   transp,
+            lpo4l4,   transp,   transp,   transp,   transp,   transp,   transp,
+                                transp,   transp,   transp,   transp,   transp,
   transp,   transp,
   transp,   transp,   transp,
-  transp,   transp,        0  ),
+  transp,   transp,   bs ),
+
 // ............................................................................
-//
+
 };
 
