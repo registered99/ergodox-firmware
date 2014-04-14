@@ -51,7 +51,7 @@ static layout_t layout PROGMEM = {
        K,    nop,
 // left hand ...... ......... ......... ......... ......... ......... .........
    grave,        1,        2,        3,        4,        5,      esc,
-     tab,        q,        w,        e,        r,        t,   brktL,
+     tab,        q,        w,        e,        r,        t,    brktL,
     caps,        a,        s,        d,        f,        g,
 shL2kcap,        z,        x,        c,        v,        b, lpupo2l2,
     guiL,    grave,  bkslash,    equal,   arrowR,
@@ -62,8 +62,8 @@ shL2kcap,        z,        x,        c,        v,        b, lpupo2l2,
             lpu1l1,        6,        7,        8,        9,        0,     dash,
             lpu2l2,        y,        u,        i,        o,        p,    brktR,
                            h,        j,        k,        l,  semicol,    quote,
-          lpu4l4,        n,        m,    comma,   period,    slash, shR2kcap,
-                                arrowL,   arrowD,   arrowU,   arrowR,     guiR,
+            lpu4l4,        n,        m,    comma,   period,    slash, shR2kcap,
+                                lpu5l5,   arrowD,   arrowU,   arrowR,     guiR,
     altR,    ctrlR,
    pageU,      nop,      nop,
    pageD,    enter,    space  ),
@@ -77,7 +77,7 @@ shL2kcap,        z,        x,        c,        v,        b, lpupo2l2,
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,
   transp,   transp,   transp,   transp,   transp,   transp,   transp,
-  ctrlL,   transp,   transp,   transp,   transp,
+   ctrlL,   transp,   transp,   transp,   transp,
                                                               guiL,   transp,
                                                     transp,   transp,   transp,
                                                     transp,   transp,   transp,
@@ -164,6 +164,29 @@ shL2kcap,        z,        x,        c,        v,        b, lpupo2l2,
   transp,   transp,   transp,
   transp,   transp,   bs ),
 
+// ............................................................................
+
+    MATRIX_LAYER(  // layer 5 : workman
+// macro, unused,
+       K,    nop,
+// left hand ...... ......... ......... ......... ......... ......... .........
+  transp,        1,        2,        3,        4,        5,  transp,
+  transp,        q,        d,        r,        w,        b,  transp,
+  transp,        a,        s,        h,        t,        g,
+  transp,        z,        x,        m,        c,        v,  transp,
+  transp,   transp,   transp,   transp,   transp,
+                                                              transp,   transp,
+                                                       nop,      nop,   transp,
+                                                    transp,   transp,   transp,
+// right hand ..... ......... ......... ......... ......... ......... .........
+            transp,        6,        7,        8,        9,        0,   transp,
+            transp,        j,        f,        u,        p,  semicol,   transp,
+                           y,        n,        e,        o,        i,   transp,
+            transp,        k,        l,    comma,   period,    slash,   transp,
+                                lpo5l5,   arrowD,   arrowU,   arrowR,   transp,
+  transp,   transp,
+  transp,      nop,      nop,
+  transp,   transp,   transp  ),
 // ............................................................................
 
 };
